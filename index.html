@@ -7,79 +7,10 @@
   
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>JS-Calculator</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-          background: #607d8b1c;
-        }
-        
-        .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #dcdcdc8a;
-          border:1px solid gray;
-        }
-        
-        .keys {
-            display: grid;
-            grid-template-columns: 55px 55px 55px 55px;
-            grid-template-rows: 40px 40px 40px 40px 40px 40px;
-            justify-content: center;
-        }
-        
-        .input-1,
-        input {
-            width: 150px;
-            height: 32px;
-            outline: none;
-            text-align: right;
-            padding: 0px 3px;
-            margin-top: 15px;
-            font-size: 21px;
-            color: gray;
-          transform: translateX(60px);
-        }
-        
-        .input-2 {
-            transform: translateY(-13px);
-          
-            font-size: 31px;
-            color: black;
-            overflow: hidden;
-            width: 221px;
-            outline: none;
-            border: none;
-            background: #dcdcdc00;
-        }
-        
-        .divs {
-            text-align: center;
-            background-color: #fffdfd59;
-            padding: 1px;
-            border: 1.8px solid #e7e7e7;
-            outline: none;
-        }
-        
-        .divs:hover {
-            background-color: #9e9e9e45;
-        }
-        
-        #num {
-            background-color: white;
-        }
-        
-        #num:hover {
-            background-color: #9e9e9e45;
-        }
-        
-        #sym:hover {
-            background-color: rgb(132 236 254);
-            color: white;
-        }
-    </style>
+    
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="script.js"></script>
+ 
 </head>
 
 <body>
@@ -122,50 +53,7 @@
 
         </div>
     </div>
-    <script>
-        var i1 = document.getElementById("input");
-        var i2 = document.getElementById("history");
-        let insertnum = (x) => {
-            i1.value += x;
-        }
-
-        let evaal = () => {
-            i1.value = eval(i2.innerHTML + i1.value);
-            i2.innerHTML = " ";
-        }
-
-        let cls = () => {
-            i1.value = " ";
-            i2.innerHTML = " ";
-        }
-        let clear1 = () => {
-            i1.value = " ";
-        }
-        let insertsym = (x) => {
-
-            var temp;
-            temp = i1.value + x; //important
-            console.log(temp);
-            i1.value = " ";
-            i2.innerHTML = temp;
-        }
-        let square = () => {
-            i1.value *= i1.value;
-        }
-        let oneBy = () => {
-            i1.value = 1 / i1.value;
-        }
-        let sqrt = () => {
-            i1.value = (Math.sqrt(i1.value)).toFixed(5);
-        }
-        let del = () => {
-            i1.value = i1.value.toString().substring(0, i1.value.length - 1);
-        }
-        
-        let random = ()=>{
-          i1.value = Math.floor(Math.random()*100000);
-        }
-    </script>
+    
 </body>
 
 </html>
